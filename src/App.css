@@ -13,6 +13,7 @@
 .personal {
   text-align: left;
 }
+
 .navbar {
   position: fixed;
   top: 0;
@@ -35,4 +36,19 @@
   display: flex;
   position: sticky;
   top: 45px;
+}
+
+.description {
+  list-style-type: none;
+  text-align: left;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+
+.aligned-titles {
+  display: flex;
+  justify-content: space-between;
 }
