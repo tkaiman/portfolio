@@ -1,0 +1,15 @@
+import ReviewList from './components/ReviewList.tsx';
+import ShimmerBar from './components/pretty/ShimmerBar.tsx';
+
+const GameReviews = (props) => {
+  return (
+    <>
+      <div className="gMain">
+        <ReviewList />
+        <ShimmerBar />
+      </div>
+    </>
+  );
+};
+
+export default GameReviews;

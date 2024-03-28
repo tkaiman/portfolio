@@ -1,0 +1,38 @@
+#root {
+  max-width: 1980px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.projects {
+  text-align: right;
+  padding: 2rem;
+}
+
+.personal {
+  text-align: left;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.small {
+  text-align: left;
+}
+
+.review-list {
+  text-align: justify;
+}
+
+.review {
+  text-align: center;
+}
+
+.search-bar {
+  display: flex;
+  position: sticky;
+  top: 45px;
+}

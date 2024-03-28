@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Undertale",
+    "content": "Undertale is one of many games that give very little detail and otherwise drops you into a world and expects you to figure everything out. ax",
+    "rating": 4.5,
+    "tags": ["test", "test3"],
+    "genres": ["rpg", "action", "retro"]
+  },
+  {
+    "id": 2,
+    "title": "Paper Mario: The Thousand Year Door",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most nintendo titles.",
+    "rating": 5.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg"]
+  },
+  {
+    "id": 3,
+    "title": "Yakuza Like a Dragon: Infinite Wealth",
+    "content": "The Yakuza series is a daunting, enormous game series with a ravenous fanbase. It can be hard to pick up a game and really understand what's going on if you haven't played any of the prior games. Infinite Wealth is likely one of the best games to start with, you might not understand the full depth of all the story points but it jumps in quickly and is extraordinarily fun. The characterization is great, but the game is extraordinarily silly and only occasionally takes itself seriously.",
+    "rating": 4.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg", "action", "adventure", "microgames"]
+  },
+  {
+    "id": 4,
+    "title": "Test review 4",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most nintendo titles.",
+    "rating": 2.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg"]
+  },
+  {
+    "id": 5,
+    "title": "Test review 5",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most nintendo titles.",
+    "rating": 3.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg"]
+  },
+  {
+    "id": 6,
+    "title": "Test review 6",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most nintendo titles.",
+    "rating": 4.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg"]
+  },
+  {
+    "id": 7,
+    "title": "test review 7",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most nintendo titles.",
+    "rating": 4.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg"]
+  },
+  {
+    "id": 8,
+    "title": "test review 8",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most nintendo titles.",
+    "rating": 4.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg"]
+  },
+  {
+    "id": 9,
+    "title": "test review 9",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most nintendo titles.",
+    "rating": 4.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg"]
+  },
+  {
+    "id": 10,
+    "title": "test review 10",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most nintendo titles.",
+    "rating": 4.0,
+    "tags": ["test", "test2"],
+    "genres": ["rpg", "jrpg"]
+  }
+]
