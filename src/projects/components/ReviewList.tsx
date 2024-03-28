@@ -124,7 +124,7 @@ function ReviewList() {
   function sortReviews(
     reviews: Review[],
     sortBy: string,
-    direction: string
+    direction: 'asc' | 'desc' | undefined
   ): Review[] {
     switch (sortBy) {
       case 'rating':
