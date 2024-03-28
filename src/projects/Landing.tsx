@@ -1,7 +1,4 @@
-import { useState } from 'react';
-import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
-
-const Landing = (props) => {
+const Landing = () => {
   return (
     <>
       <div className="main">

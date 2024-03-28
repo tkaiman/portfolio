@@ -1,7 +1,7 @@
 import ReviewList from './components/ReviewList.tsx';
 import ShimmerBar from './components/pretty/ShimmerBar.tsx';
 
-const GameReviews = (props) => {
+const GameReviews = () => {
   return (
     <>
       <div className="gMain">
