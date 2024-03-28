@@ -50,7 +50,7 @@ function ReviewList() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          '/public/reviews.json'
+          '/reviews.json'
         );
         const data: Review[] = await response.json();
         const sortedReviews = sortReviews(data, 'rating', 'desc');
