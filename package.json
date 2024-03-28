@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "latest",
+    "react": ">=18.2.0",
     "react-dom": "latest",
     "react-router-dom": "latest",
     "lodash": "latest",
