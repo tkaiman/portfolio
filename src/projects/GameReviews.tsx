@@ -169,7 +169,7 @@ const GameReviews: React.FC<SharedBasinProps> = ({
         <div className="subpage-telem-group">
           <div className="subpage-telem-item">
             <span className="telem-key">RESOLUTION</span>
-            <span className="telem-val">2048²</span>
+            <span className="telem-val">VECTOR</span>
           </div>
           <div className="subpage-telem-item">
             <span className="telem-key">VISCOSITY</span>

@@ -322,7 +322,7 @@ const Landing: React.FC<SharedBasinProps> = ({
           <div className="m-telem-readouts">
             <div className="telem-block r-telem-res">
               <span className="telem-key">RESOLUTION</span>
-              <span className="telem-val">2048²</span>
+              <span className="telem-val">VECTOR</span>
             </div>
 
             <div className="telem-block r-telem-visc">

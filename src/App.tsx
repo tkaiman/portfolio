@@ -6,7 +6,6 @@ import GameReviews from './projects/GameReviews.tsx';
 import Landing, { type FluidMode } from './projects/Landing.tsx';
 
 const WASHI_PLATE = '/assets/plates/washi-paper.png';
-const SWIRL_PLATE = '/assets/plates/suminagashi-swirl.png';
 
 function App() {
   const [fluidMode, setFluidMode] = useState<FluidMode>('drop');
@@ -25,7 +24,6 @@ function App() {
     setViscosity,
     flowNormalized,
     washiPlateSrc: WASHI_PLATE,
-    swirlPlateSrc: SWIRL_PLATE,
     onDropPulse: handleDropPulse,
   };
 
@@ -42,7 +40,6 @@ function App() {
                   fluidMode={fluidMode}
                   viscosity={viscosity}
                   dropPulseCount={dropPulseCount}
-                  swirlPlateSrc={SWIRL_PLATE}
                   variant="home"
                   onFlowChange={setFlowNormalized}
                 />
@@ -60,7 +57,6 @@ function App() {
                   fluidMode={fluidMode}
                   viscosity={viscosity}
                   dropPulseCount={dropPulseCount}
-                  swirlPlateSrc={SWIRL_PLATE}
                   variant="masthead"
                   onFlowChange={setFlowNormalized}
                 />

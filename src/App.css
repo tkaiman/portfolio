@@ -1335,6 +1335,36 @@ html {
   user-select: none;
   -webkit-user-select: none;
   z-index: 2;
+  /* Ink soaks into the washi: paper fibre shows through every ring. */
+  mix-blend-mode: multiply;
+}
+
+/* Masthead: ink pools top-right and feathers away before the search bar and prose. */
+.suminagashi-live-canvas--masthead {
+  opacity: 0.9;
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 70%, transparent 100%),
+    linear-gradient(to left, #000 45%, transparent 92%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, #000 70%, transparent 100%),
+    linear-gradient(to left, #000 45%, transparent 92%);
+  mask-composite: intersect;
+}
+
+@media (max-width: 960px) {
+  /* Mobile: ink lives top-right behind the hero, feathering out before cards and controls. */
+  .suminagashi-live-canvas--home {
+    opacity: 0.72;
+    -webkit-mask-image:
+      linear-gradient(to bottom, #000 0, #000 300px, transparent 470px),
+      linear-gradient(to left, #000 30%, transparent 85%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to bottom, #000 0, #000 300px, transparent 470px),
+      linear-gradient(to left, #000 30%, transparent 85%);
+    mask-composite: intersect;
+  }
 }
 
 .r-cta-primary,
