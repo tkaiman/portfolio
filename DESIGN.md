@@ -112,14 +112,15 @@ Built from the `medium-native-fluid-ink-basin` visual world (`seed:aad54a91f66a0
 
 Density balances gallery-grade quietude with laboratory precision. A three-column architectural frame—persistent left navigation and physical fluid controls (`DROP`, `FAN`, `STILL`, `VISCOSITY`), an expansive central reading and marbling stage, and a narrow right simulation telemetry margin (`RESOLUTION`, `VISCOSITY`, `FLOW RATE`)—unites planet-scale backend dossiers (175+ global partners, network tokenization, AI triage, IDEXX, CU Boulder Chemistry) with searchable, genre-filterable game reviews (`/GameReviews`).
 
-Motion and browser chrome belong to the basin's physics. Interactive controls settle along an exponential ease-out curve (`240ms`–`260ms cubic-bezier(0.16, 1, 0.3, 1)`), while pointer dragging, gliding, and fluid verbs (`DROP`, `FAN`, `STILL`, `VISCOSITY`) advect the actual suminagashi ink pigment in real time on a WebGL2 `<canvas>` (`FluidBasinCanvas.tsx`) with zero static ghost image left behind (and under `prefers-reduced-motion: reduce`, all CSS transitions halt and the basin falls back cleanly to a static masked plate). Native browser surfaces are themed to match: text selection carries a dilute indigo wash (`rgba(30, 45, 74, 0.18)` over `#081730`, with `user-select: none` on the interactive basin stage so clicking or dragging never darkens the marbled surface), text carets and `:focus-visible` outlines (`2px solid #1e2d4a`, `2px` offset) track the active ink current, and scrollbars render as thin `8px` feathered-slate thumbs (`#8991a1`) inset against the washi ground.
+Motion and browser chrome belong to the basin's physics. Interactive controls settle along an exponential ease-out curve (`240ms`–`260ms cubic-bezier(0.16, 1, 0.3, 1)`), while pointer dragging, gliding, and fluid verbs (`DROP`, `FAN`, `STILL`, `VISCOSITY`) carry vector suminagashi ink in real time on a Canvas2D `<canvas>` (`FluidBasinCanvas.tsx`), with no raster plate behind it. Under `prefers-reduced-motion: reduce`, all CSS transitions halt and the basin shows its finished, physics-generated composition at once and holds still. Native browser surfaces are themed to match: text selection carries a dilute indigo wash (`rgba(30, 45, 74, 0.18)` over `#081730`, with `user-select: none` on the interactive basin stage so clicking or dragging never darkens the marbled surface), text carets and `:focus-visible` outlines (`2px solid #1e2d4a`, `2px` offset) track the active ink current, and scrollbars render as thin `8px` feathered-slate thumbs (`#8991a1`) inset against the washi ground.
 
 **Key Characteristics:**
 - **Tactile Washi & Sumi Materiality:** Seamless kozo fiber paper (`#f2f1ef`) paired with carbon sumi ink (`#0c0f17`) and single-pigment deep indigo (`#081730` / `#1e2d4a`).
 - **Three-Column Architectural Plumb Frame:** Left control rail (`10.470%` / `152px`), central basin and ledger stage (`81.830%` / `1fr`), and right simulation telemetry rail (`7.700%` / `112px`).
 - **Four Self-Hosted Typographic Voices:** Airy geometric-humanist display (`Noto Sans HK`), condensed structural headers and tracked controls (`IBM Plex Sans Condensed`), readable condensed editorial prose (`Fira Sans Condensed`), and tabular telemetry readouts (`IBM Plex Mono`).
-- **Live WebGL2 Suminagashi Ink Advection:** Real-time incompressible Navier-Stokes velocity projection, vorticity confinement, clamped MacCormack (BFECC) pigment advection directly on `suminagashi-swirl.png`, and continuous Jaffer radial drop displacement coupled to `DROP`, `FAN`, `STILL`, and `VISCOSITY` (`0.05`–`0.37`).
-- **Feathered Plate Masking:** High-resolution raster plates (`washi-paper.png` and `suminagashi-swirl.png`) feather cleanly into the paper ground via directional linear-gradient alpha masks and copy-zone mist ceilings so marbled ink never compromises text contrast.
+- **Vector Suminagashi Ink on a Live Water Field:** Every drop is a closed polygon carried by an incompressible CPU fluid solver. Ink is never resampled into pixels, so marbled lines stay razor-sharp however long the water is stirred. Drops bloom by Jaffer's exact area-preserving displacement. Everything is coupled to `DROP`, `FAN`, `STILL`, and `VISCOSITY` (`0.05`–`0.37`).
+- **Physics-Generated Opening:** There is no starting image. Each visit seeds a new composition: concentric rings bloom at 2–4 sites, stray specks land, then sweeping strokes stir it into marbling, all in about 3–4 seconds.
+- **Feathered Masking:** The washi plate and the ink canvas feather into the paper ground via directional linear-gradient alpha masks and a copy-zone veil, so marbled ink never compromises text contrast.
 - **Flat-At-Rest Paper Discipline:** Surfaces sit flush with `1px` mineral rules at rest, reserving soft indigo-tinted shadows exclusively for hover states.
 
 ## Colors
@@ -143,7 +144,7 @@ A disciplined single-pigment palette of deep sumi indigo and carbon black suspen
 - **Carbon Sumi Ink** (`#0c0f17`): Primary typographic ink (`17.0:1` AAA on `#f2f1ef`). Used for display headlines (`#0a0f1e`), brand marks (`#0c0d10`), organization and review titles (`#0c0f17`), dossier card titles (`#0e1014`), and long-form engineering and review prose (`#0e1015`–`#191d25`).
 
 ### Named Rules
-**The Single-Pigment Basin Rule.** Deep sumi indigo (`#081730` / `#1e2d4a`) is the sole chromatic pigment in the system. Never introduce secondary teal, emerald, amber, or semantic rainbow accents; hierarchy comes from ink concentration, hairline rules, and indigo fill density.
+**The Single-Pigment Basin Rule.** Deep sumi indigo (`#081730` / `#1e2d4a`) is the sole chromatic pigment in the system. Never introduce secondary teal, emerald, amber, or semantic rainbow accents; hierarchy comes from ink concentration, hairline rules, and indigo fill density. **Basin exception:** the pigment inside the fluid basin is the traditional suminagashi trio. That means sumi black and indigo separated by clear-water rings, plus a rare beni red (`#b5372b`, at most one ring per opening and ~7% of visitor drops). Beni never appears in UI chrome.
 
 **The Ink-Tinted Secondary Rule.** Every muted text, placeholder, caption, and instrument stroke carries a cool iron-indigo undertone (`#373c46`, `#515661`, `#8991a1`)—never pure neutral `#808080` gray—and all readable copy including input placeholders must hold at least `4.5:1` contrast against `#f2f1ef` (shipped minimum: `6.3:1`).
 
@@ -166,7 +167,7 @@ A disciplined single-pigment palette of deep sumi indigo and carbon black suspen
 - **Mono Readout** (`400`–`500`, `0.80rem`–`0.85rem` for spans/tenures/counts and `1.55rem` weight `500` for review rating numerators, `line-height: 1.35`, `font-variant-numeric: tabular-nums`): Year ranges (`2020 – Present`), role tenures (`Jul 2022 – Present`), live filtered review counts (`3 of 3 reviews`), and `/ 5.0` rating readouts in `IBM Plex Mono`.
 
 ### Named Rules
-**The Tabular Instrument Rule.** Every numeric readout—live `VISCOSITY` values, `RESOLUTION 2048²`, review index scores (`5.0/5`), filtered result counts, tenure dates, and rating numerators—must set `font-variant-numeric: tabular-nums` so slider scrubbing and state updates never shift layout width.
+**The Tabular Instrument Rule.** Every numeric readout—live `VISCOSITY` values, `RESOLUTION VECTOR`, review index scores (`5.0/5`), filtered result counts, tenure dates, and rating numerators—must set `font-variant-numeric: tabular-nums` so slider scrubbing and state updates never shift layout width.
 
 **The Self-Hosted Block-Render Rule.** All typefaces load exclusively from self-hosted `/fonts/*.woff2` assets with `font-display: block`. Never load external font CDNs or fall back to platform system display faces that would cause FOUT reflows inside measured stage coordinates.
 
@@ -202,11 +203,11 @@ The spatial architecture is governed by a continuous three-column plumb frame th
 Surfaces eschew drop-shadow hierarchies in favor of material stratification—layering translucent kozo paper veils, `1px` mineral ink rules, feathered raster plates, and live canvas rings across a strict 8-level z-axis (`z-index: 0` to `7`):
 
 1. **Tiled Washi Ground (`z-index: 0–1`):** `/assets/plates/washi-paper.png` (`560x160` px, SHA-256 `db2c62f0776ec0fd07deeef36519ac837e2eaa725d9e841f4ec2d91987c0432f`) repeats seamlessly across `.basin-viewport` (`calc(560 * var(--u)) calc(160 * var(--u))`), `.portfolio-surface`, and `.reviews-page-shell` (`560px 160px`, scaling to `420px 120px` at `<= 960px`).
-2. **Feathered Suminagashi Swirl Plate (`z-index: 2` on `/`, `z-index: 0` in `/GameReviews` masthead):** `/assets/plates/suminagashi-swirl.png` (`1270x1344` px, SHA-256 `c9e08324a12b41aa37ae846c5846fe93340f422a9ab2355afeb1aaf9be472106`) anchors the right basin field. To prevent hard rectangular crop seams or text collisions, it is always alpha-masked:
-   - Desktop `/` stage: `mask-image: linear-gradient(to right, transparent 0%, #000 10%)` at `100%` opacity.
-   - `/GameReviews` `.reviews-masthead`: `opacity: 0.42` with intersected dual gradients (`linear-gradient(to bottom, #000 48%, transparent 100%)` intersected with `linear-gradient(to left, #000 52%, transparent 100%)`), strictly clipped inside `.reviews-masthead` (`overflow: hidden`) so ink never bleeds into the search bar or review prose below.
-   - Mobile `/` stage (`<= 960px`): `opacity: 0.42` at top-right (`width: 78%; height: 360px; right: -12%`) with intersected bottom (`34%` to `95%`) and left (`38%` to `95%`) fade masks.
-3. **Interactive Fluid Canvas (`z-index: 3`):** `.suminagashi-live-canvas` (`position: absolute; inset: 0; pointer-events: none`) renders dynamic concentric ink rings directly above the static swirl plate and beneath UI chrome.
+2. **Retired: Suminagashi Swirl Plate.** The basin no longer uses a raster starting image. `/assets/plates/suminagashi-swirl.png` and the `.plate-suminagashi` CSS remain in the repo but nothing renders them.
+3. **Interactive Fluid Canvas (`z-index: 2`):** `.suminagashi-live-canvas` (`position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply`) paints the vector ink so washi fibre shows through every ring. It is always feathered:
+   - Desktop `/`: the ink is clipped to the basin (`10.47%`–`92.3%`). A radial `destination-out` veil centred on the headline (`0.29W, 0.3H`) lifts ink away from the copy.
+   - `/GameReviews` `.reviews-masthead`: `opacity: 0.9`. Intersected masks run `to bottom #000 70% → transparent` and `to left #000 45% → transparent 92%`. Drops land in the right `min(560px, 52%)`.
+   - Mobile `/` (`<= 960px`): `opacity: 0.72`. Intersected masks run bottom `#000 300px → transparent 470px` and left `#000 30% → transparent 85%`.
 4. **Rail Frames, Dossier Veils & Foreground Copy (`z-index: 5–7`):** Structural rail borders (`z-index: 5`), hairline dividers and `0.95`-alpha dossier cards (`z-index: 6`), and interactive controls and typography (`z-index: 7`) sit cleanly atop the water surface.
 
 ### Shadow Vocabulary
@@ -259,14 +260,31 @@ Every component pairs quiet paper-and-rule restraint at rest with crisp indigo-a
 - **Typography & States:** Uppercase `IBM Plex Sans Condensed` (`calc(11 * var(--u))` / `0.72rem`–`0.75rem`, `letter-spacing: 0.05em`). The active route (`aria-current="page"`) elevates weight to `600`, darkens text to `#09162f` / `#0f1626`, and encloses its `12px`–`14px` `#f2f1ef` stroke icon inside a `24px` (`calc(24 * var(--u))`) solid `#09162f` circle (`.nav-badge-active` / `.subpage-badge-active`). Inactive internal links render outline icons (`#434750`–`#474a4d`), followed below a `#d3d3cd` divider by external `GITHUB` and `LINKEDIN` links with `#0e1726` / `#0a1826` marks.
 
 ### Interactive Suminagashi Fluid Basin & Telemetry
-The signature experience (`FluidBasinCanvas.tsx` + left-rail fluid controls + right-rail telemetry) implements live WebGL2 Suminagashi ink advection directly on `suminagashi-swirl.png` so there is zero static ghost image behind the moving ink:
-- **Optical Ink-Absorption Advection & Jaffer Drops:** On mount, `INIT_INK_FRAG` converts `suminagashi-swirl.png` into optical pigment absorption relative to `#f2f1ef` kozo paper inside a high-resolution `RGBA16F` ping-pong buffer (`maxInkDim = 2560`) with directional alpha feathering. Each frame solves incompressible 2D Navier-Stokes velocity (`256`-row isotropic `RG16F` grid, vorticity confinement, 20-iteration Jacobi pressure projection) and advects the ink field via second-order clamped MacCormack (`ADVECT_INK_BFECC_FRAG`) reconstructed over `#f2f1ef` via premultiplied alpha (`DISPLAY_FRAG`), with a mist-slate ceiling behind the desktop hero copy zone so dragged ink never compromises headline readability. Under `prefers-reduced-motion: reduce` or missing WebGL2 float-FBO support, `FluidBasinCanvas` cleanly renders the masked static `<figure>` fallback.
-- **Stage-Bounded Pointer Combing & Clicks:** Pointer drags (`cursor: grab` / `grabbing`, `user-select: none`) comb and curl the actual suminagashi veins across the central basin (`10.47% < x < 92.30%` on desktop `/`, full width on mobile and `/GameReviews` masthead) while ignoring events originating inside `a, button, input, label` elements. Short clicks (`movedDist <= 6px` in `DROP` mode) never darken the image or select DOM elements; instead, `DROP_INK_FRAG` applies continuous area-preserving Jaffer displacement (`rSrc = sqrt(max(0, r² - R²))`) to part surrounding ink outward with a clear surfactant collar around a delicate floating indigo droplet.
+The signature experience (`FluidBasinCanvas.tsx` + `src/projects/fluid/*` + left-rail fluid controls + right-rail telemetry) treats **ink as geometry and water as a field**. That is why stirring never blurs.
+- **Vector Ink (`fluid/inkLayer.ts`):** Each drop is a closed polygon (`Float32Array`) whose vertices ride the water with midpoint RK2.
+  - Drops bloom by Jaffer's exact area-preserving displacement, `|p′−c|² = |p−c|² + ΔR²`, eased over `~0.3–0.6s`.
+  - Painter's order reproduces the rings, because each newer drop sits inside the hole it pushed into older ink. Clear-water drops paint with `destination-out`.
+  - Adaptive resampling keeps edges `~2.4px` on screen: Catmull-Rom splits on long edges, merges where vertices bunch up.
+  - A vertex budget (`75k` desktop, `45k` mobile and masthead) lengthens edges first. Only as a last resort does it fade out the most thread-like drops (high perimeter, little area), so big shapes survive hard stirring.
+- **Water (`fluid/flowField.ts`):** A CPU stable-fluids solver on a `~6500`-cell MAC grid.
+  - Steps: semi-Lagrangian RK2 self-advection, vorticity confinement, exponential damping, warm-started SOR pressure projection (`40` iterations, `ω = 1.82`), free-slip walls.
+  - Stirs are stream-function dipoles, so every force is exactly divergence-free and drop areas stay constant.
+  - The field sleeps when calm, and the loop pauses offscreen and in hidden tabs.
+- **Physics-Generated Opening (`fluid/opening.ts`):** There is no starting image. A seeded RNG builds a new script each visit:
+  - 2–4 drop sites (by stage area), each with 9–14 alternating ink/clear rings. At most one beni ring.
+  - 7–12 specks.
+  - Two Bézier stirring strokes along the stage's long axis, bending through the sites. Shallow stages such as the masthead and mobile get one slower stroke.
+  - Reduced motion fast-forwards the same physics and shows the finished composition still.
+- **Pointer Play:** Ignores events from `a, button, input, label, select, textarea`.
+  - Click (`< 7px` movement): drops an ink ring with a clear collar.
+  - Hold `260ms`: drips, alternating ink and clear every `210ms`.
+  - Drag: stirs the water. Hand speed is capped so a flick swirls rather than shreds, and momentum carries on after release.
+  - Mouse hover: leaves a faint wake.
 - **Three Physical Fluid Verbs:**
-  - `DROP` (default active): Enables pointer combing and click/button surfactant-and-ink drop blooms, maintains gentle viscosity-damped momentum, and pulses normalized flow (`+0.28`–`+0.34`).
-  - `FAN`: Drives continuous laminar breeze splats across the velocity field scaled inversely by viscosity, holding normalized flow near `0.62 ± 0.08` and illuminating the 9-vane `SuminagashiFanIcon` inside a `#081835` circle.
-  - `STILL`: Halts pointer disturbance and rapidly damps fluid velocity (`× 0.78` per frame) until the marbled water settles to calm stillness.
-- **Coupled Viscosity & Telemetry:** Shared React state (`App.tsx`) couples `fluidMode`, `viscosity` (`0.05`–`0.37`, default `0.14`), and `flowNormalized` (`~90ms` callback cadence) across `/` and `/GameReviews`, driving the right-rail `RESOLUTION` (`2048²`), tabular `VISCOSITY` readout, and `BasinFlowDial` needle angle (`[0.06π..0.92π]` radians).
+  - `DROP` (default active): Enables stirring and drops. The rail button drops a larger ring at a random stage point.
+  - `FAN`: Drives a continuous gentle breeze across the water.
+  - `STILL`: Disables stirring, zeroes vorticity and damps the water hard until it settles.
+- **Coupled Viscosity & Telemetry:** Shared React state (`App.tsx`) couples `fluidMode`, `viscosity` and `flowNormalized`. Viscosity runs `0.05`–`0.37` (default `0.14`) and sets damping and vorticity, i.e. how long momentum lasts. Flow updates on a `~90ms` cadence, derived from the field's max speed. The three drive the right-rail `RESOLUTION` (`VECTOR`), the tabular `VISCOSITY` readout, and the `BasinFlowDial` needle (`[0.06π..0.92π]`). These are shared across `/` and `/GameReviews`.
 
 ## Do's and Don'ts
 
@@ -274,9 +292,9 @@ The signature experience (`FluidBasinCanvas.tsx` + left-rail fluid controls + ri
 - **Do** ground every surface in Unbleached Kozo Washi (`#f2f1ef`) with tiled `washi-paper.png` texture and separate sections using `1px` mineral hairlines (`#c4c5c0`, `#c6c6c4`, `#d3d3cd`) rather than heavy background color blocks.
 - **Do** restrict chromatic emphasis to Deep Sumi Indigo (`#081730`) and Living Indigo Current (`#1e2d4a`), reserving solid indigo fills for primary CTAs, active navigation/fluid badges, selected filter/sort states, and rating bar fills.
 - **Do** set `font-variant-numeric: tabular-nums` (and `--font-mono` where established) on every live telemetry value, rating score, result count, and tenure span so numeric updates never jitter horizontally.
-- **Do** mask `suminagashi-swirl.png` with directional `linear-gradient` alpha masks (and `opacity: 0.42` in subpage mastheads and `<= 960px` viewports) so marbled ink feathers organically into the paper ground before reaching body or display text.
+- **Do** feather the ink canvas with directional `linear-gradient` alpha masks (and reduced opacity in subpage mastheads and `<= 960px` viewports) so marbled ink fades into the paper ground before reaching body or display text. Keep ink crisp and fully opaque inside the canvas; grey half-transparent wash is the look this sim exists to avoid.
 - **Do** keep long-form engineering descriptions and game review prose within `60ch`–`68ch` line measures in `Fira Sans Condensed` (`1.10rem`–`1.14rem`, `line-height: 1.48`–`1.58`) for unhurried reading.
-- **Do** honor `prefers-reduced-motion: reduce` by disabling CSS state transitions and bypassing the `<canvas>` animation loop completely.
+- **Do** honor `prefers-reduced-motion: reduce` by disabling CSS state transitions and showing the basin's finished composition instantly, without the opening animation.
 - **Do** ship only verified career facts from `PRODUCT.md` and finished, authored game reviews in `/reviews.json` with instant client-side search, multi-genre filtering, and recoverable empty/error states.
 
 ### Don't:
