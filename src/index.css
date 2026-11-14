@@ -1,67 +1,214 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+/* Self-hosted typographic system — Suminagashi Ink Basin */
+@font-face {
+  font-family: 'Noto Sans HK';
+  src: url('/fonts/noto-sans-hk-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans HK';
+  src: url('/fonts/noto-sans-hk-400.woff2') format('woff2');
   font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Noto Sans HK';
+  src: url('/fonts/noto-sans-hk-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  src: url('/fonts/ibm-plex-sans-condensed-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  src: url('/fonts/ibm-plex-sans-condensed-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  src: url('/fonts/ibm-plex-sans-condensed-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  src: url('/fonts/ibm-plex-sans-condensed-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  src: url('/fonts/ibm-plex-sans-condensed-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  src: url('/fonts/fira-sans-condensed-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  src: url('/fonts/fira-sans-condensed-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  src: url('/fonts/fira-sans-condensed-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/ibm-plex-mono-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/ibm-plex-mono-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  /* Suminagashi Basin Palette */
+  --washi-ground: #f2f1ef;
+  --washi-elevated: rgba(242, 241, 239, 0.92);
+  --washi-solid: #f2f1ef;
+  --mist-tint: #dde2e8;
+  --hairline-rule: #c4c5c0;
+  --card-rule: #b8b9b5;
+  --feathered-slate: #8991a1;
+  --dilute-ink: #515661;
+  --ink-secondary: #373c46;
+  --ink-current: #1e2d4a;
+  --indigo-depth: #081730;
+  --sumi-ink: #0c0f17;
+
+  /* Typographic Voices */
+  --font-display: 'Noto Sans HK', 'IBM Plex Sans Condensed', sans-serif;
+  --font-condensed: 'IBM Plex Sans Condensed', 'Fira Sans Condensed', sans-serif;
+  --font-body-condensed: 'Fira Sans Condensed', 'IBM Plex Sans Condensed', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Measured Comp Layout Coordinates (% of 1376x768) */
+  --r-washi-paper-x: 11.630%; --r-washi-paper-y: 1.560%; --r-washi-paper-w: 20.350%; --r-washi-paper-h: 10.420%;
+  --r-suminagashi-swirl-x: 46.150%; --r-suminagashi-swirl-y: 0.000%; --r-suminagashi-swirl-w: 46.150%; --r-suminagashi-swirl-h: 100.000%;
+  --r-left-rail-x: 0.000%; --r-left-rail-y: 0.000%; --r-left-rail-w: 10.470%; --r-left-rail-h: 100.000%;
+  --r-brand-mark-x: 1.740%; --r-brand-mark-y: 5.600%; --r-brand-mark-w: 6.980%; --r-brand-mark-h: 6.380%;
+  --r-nav-overview-x: 1.450%; --r-nav-overview-y: 20.700%; --r-nav-overview-w: 7.500%; --r-nav-overview-h: 3.650%;
+  --r-nav-reviews-x: 1.820%; --r-nav-reviews-y: 26.300%; --r-nav-reviews-w: 7.900%; --r-nav-reviews-h: 2.470%;
+  --r-nav-github-x: 1.670%; --r-nav-github-y: 40.760%; --r-nav-github-w: 6.400%; --r-nav-github-h: 2.860%;
+  --r-nav-linkedin-x: 1.670%; --r-nav-linkedin-y: 45.960%; --r-nav-linkedin-w: 6.800%; --r-nav-linkedin-h: 2.600%;
+  --r-fluid-heading-x: 1.160%; --r-fluid-heading-y: 70.700%; --r-fluid-heading-w: 8.400%; --r-fluid-heading-h: 1.560%;
+  --r-fluid-drop-x: 1.160%; --r-fluid-drop-y: 73.310%; --r-fluid-drop-w: 6.500%; --r-fluid-drop-h: 4.170%;
+  --r-fluid-fan-x: 1.160%; --r-fluid-fan-y: 78.520%; --r-fluid-fan-w: 6.500%; --r-fluid-fan-h: 4.170%;
+  --r-fluid-still-x: 1.160%; --r-fluid-still-y: 83.590%; --r-fluid-still-w: 6.500%; --r-fluid-still-h: 4.300%;
+  --r-fluid-viscosity-label-x: 1.160%; --r-fluid-viscosity-label-y: 90.890%; --r-fluid-viscosity-label-w: 7.500%; --r-fluid-viscosity-label-h: 1.690%;
+  --r-fluid-viscosity-slider-x: 1.160%; --r-fluid-viscosity-slider-y: 93.230%; --r-fluid-viscosity-slider-w: 7.920%; --r-fluid-viscosity-slider-h: 1.950%;
+  --r-hero-headline-x: 15.630%; --r-hero-headline-y: 17.500%; --r-hero-headline-w: 38.590%; --r-hero-headline-h: 13.930%;
+  --r-hero-subcopy-x: 15.630%; --r-hero-subcopy-y: 33.400%; --r-hero-subcopy-w: 35.470%; --r-hero-subcopy-h: 7.550%;
+  --r-cta-primary-x: 15.700%; --r-cta-primary-y: 44.500%; --r-cta-primary-w: 16.720%; --r-cta-primary-h: 5.860%;
+  --r-cta-secondary-x: 35.200%; --r-cta-secondary-y: 46.100%; --r-cta-secondary-w: 14.100%; --r-cta-secondary-h: 3.260%;
+  --r-card-1-x: 15.480%; --r-card-1-y: 68.800%; --r-card-1-w: 17.950%; --r-card-1-h: 21.400%;
+  --r-card-1-title-x: 16.930%; --r-card-1-title-y: 71.900%; --r-card-1-title-w: 11.990%; --r-card-1-title-h: 6.640%;
+  --r-card-1-body-x: 16.930%; --r-card-1-body-y: 80.600%; --r-card-1-body-w: 14.000%; --r-card-1-body-h: 6.380%;
+  --r-card-2-x: 34.230%; --r-card-2-y: 68.800%; --r-card-2-w: 17.950%; --r-card-2-h: 21.400%;
+  --r-card-2-title-x: 35.680%; --r-card-2-title-y: 71.900%; --r-card-2-title-w: 14.500%; --r-card-2-title-h: 7.680%;
+  --r-card-2-body-x: 35.610%; --r-card-2-body-y: 80.600%; --r-card-2-body-w: 15.600%; --r-card-2-body-h: 5.860%;
+  --r-card-3-x: 52.980%; --r-card-3-y: 68.800%; --r-card-3-w: 17.950%; --r-card-3-h: 21.400%;
+  --r-card-3-title-x: 54.140%; --r-card-3-title-y: 71.900%; --r-card-3-title-w: 13.500%; --r-card-3-title-h: 7.550%;
+  --r-card-3-body-x: 54.140%; --r-card-3-body-y: 80.600%; --r-card-3-body-w: 13.500%; --r-card-3-body-h: 6.380%;
+  --r-card-4-x: 71.730%; --r-card-4-y: 68.800%; --r-card-4-w: 18.100%; --r-card-4-h: 21.400%;
+  --r-card-4-title-x: 73.180%; --r-card-4-title-y: 71.900%; --r-card-4-title-w: 12.500%; --r-card-4-title-h: 7.550%;
+  --r-card-4-body-x: 73.040%; --r-card-4-body-y: 80.600%; --r-card-4-body-w: 16.000%; --r-card-4-body-h: 6.380%;
+  --r-right-rail-x: 92.300%; --r-right-rail-y: 0.000%; --r-right-rail-w: 7.700%; --r-right-rail-h: 100.000%;
+  --r-telem-res-x: 93.820%; --r-telem-res-y: 68.800%; --r-telem-res-w: 5.200%; --r-telem-res-h: 3.910%;
+  --r-telem-visc-x: 93.820%; --r-telem-visc-y: 75.440%; --r-telem-visc-w: 5.200%; --r-telem-visc-h: 4.040%;
+  --r-telem-flow-label-x: 93.820%; --r-telem-flow-label-y: 82.080%; --r-telem-flow-label-w: 5.200%; --r-telem-flow-label-h: 1.560%;
+  --r-telem-flow-dial-x: 93.970%; --r-telem-flow-dial-y: 84.550%; --r-telem-flow-dial-w: 3.340%; --r-telem-flow-dial-h: 6.120%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--washi-ground);
+  color: var(--sumi-ink);
+  font-family: var(--font-condensed);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  text-rendering: optimizeLegibility;
+  caret-color: var(--ink-current);
+  scrollbar-color: var(--feathered-slate) var(--washi-ground);
+  scrollbar-width: thin;
 }
 
 body {
   margin: 0;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--washi-ground);
+  color: var(--sumi-ink);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+::selection {
+  background-color: rgba(30, 45, 74, 0.18);
+  color: var(--indigo-depth);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--washi-ground);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--feathered-slate);
+  border-radius: 4px;
+  border: 2px solid var(--washi-ground);
+}
+
+a, button, input {
   font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+:focus-visible {
+  outline: 2px solid var(--ink-current);
+  outline-offset: 2px;
 }

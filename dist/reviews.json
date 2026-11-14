@@ -1,0 +1,26 @@
+[
+  {
+    "id": 2,
+    "title": "Paper Mario: The Thousand Year Door",
+    "shortTitle": "Paper Mario: The Thousand Year Door",
+    "content": "This game is one of my childhood favorites. It takes what made the early Nintendo RPGs special and perfected it. The side-characters are enjoyable, the world is well built, and the story is just fun. Music is exceptional, as it is in most Nintendo titles.",
+    "rating": 5.0,
+    "genres": ["rpg", "jrpg"]
+  },
+  {
+    "id": 1,
+    "title": "Undertale",
+    "shortTitle": "Undertale",
+    "content": "Undertale is one of many games that give very little detail and otherwise drops you into a world and expects you to figure everything out.",
+    "rating": 4.5,
+    "genres": ["rpg", "action", "retro"]
+  },
+  {
+    "id": 3,
+    "title": "Yakuza Like a Dragon: Infinite Wealth",
+    "shortTitle": "Yakuza: Infinite Wealth",
+    "content": "The Yakuza series is a daunting, enormous game series with a ravenous fanbase. It can be hard to pick up a game and really understand what's going on if you haven't played any of the prior games. Infinite Wealth is likely one of the best games to start with, you might not understand the full depth of all the story points but it jumps in quickly and is extraordinarily fun. The characterization is great, but the game is extraordinarily silly and only occasionally takes itself seriously.",
+    "rating": 4.0,
+    "genres": ["rpg", "jrpg", "action", "adventure", "microgames"]
+  }
+]
